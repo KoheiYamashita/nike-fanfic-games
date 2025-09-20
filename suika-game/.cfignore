@@ -1,0 +1,3 @@
+# Cloudflare Pages: serve GLB models from external S2 bucket
+public/model/
+model/
