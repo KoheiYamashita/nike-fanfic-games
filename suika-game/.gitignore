@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Caches
+.cache/
+.turbo/
+**/.vite/
+.eslintcache
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing/Coverage
+coverage/
+
+# Env files
+.env
+.env.*
+
+# OS / Editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# GLB assets under public/model are tracked intentionally

@@ -1,0 +1,2 @@
+# Track large 3D model assets with Git LFS
+suika-game/public/model/*.glb filter=lfs diff=lfs merge=lfs -text
