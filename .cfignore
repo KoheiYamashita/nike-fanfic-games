@@ -1,0 +1,3 @@
+# Serve GLB models from external S2 bucket instead of bundling with Pages
+suika-game/public/model/
+suika-game/dist/model/
