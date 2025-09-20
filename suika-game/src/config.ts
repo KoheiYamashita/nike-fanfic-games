@@ -6,6 +6,11 @@ export enum Level {
   Punike = 5, // ぷにけ
 }
 
+// デプロイ先に応じてモデル配信のベースURLを切り替え
+// 例: Cloudflare R2 を使うなら VITE_ASSET_BASE=https://<your-r2-domain>/
+const RAW_BASE = (import.meta as any).env?.VITE_ASSET_BASE ?? (import.meta as any).env?.BASE_URL ?? '/';
+const ASSET_BASE = RAW_BASE.endsWith('/') ? RAW_BASE : RAW_BASE + '/';
+
 export const LEVEL_ORDER: Level[] = [
   Level.Skull,
   Level.Haniwa,
@@ -37,11 +42,11 @@ export type ModelSpec = {
 
 // GLBファイル名とレベル対応
 export const MODELS: ModelSpec[] = [
-  { level: Level.Skull,  name: "スカルぷにけ",   file: "/model/スカルぷにけ.glb" },
-  { level: Level.Haniwa, name: "埴輪ぷにけ",     file: "/model/埴輪ぷにけ.glb" },
-  { level: Level.Pixel,  name: "ピクセルぷにけ", file: "/model/ピクセルぷにけ.glb" },
-  { level: Level.Punk,   name: "パンクロックぷにけ", file: "/model/パンクロックぷにけ.glb" },
-  { level: Level.Punike, name: "ぷにけ",         file: "/model/ぷにけ.glb" },
+  { level: Level.Skull,  name: "スカルぷにけ",   file: `${ASSET_BASE}model/スカルぷにけ.glb` },
+  { level: Level.Haniwa, name: "埴輪ぷにけ",     file: `${ASSET_BASE}model/埴輪ぷにけ.glb` },
+  { level: Level.Pixel,  name: "ピクセルぷにけ", file: `${ASSET_BASE}model/ピクセルぷにけ.glb` },
+  { level: Level.Punk,   name: "パンクロックぷにけ", file: `${ASSET_BASE}model/パンクロックぷにけ.glb` },
+  { level: Level.Punike, name: "ぷにけ",         file: `${ASSET_BASE}model/ぷにけ.glb` },
 ];
 
 export const SPAWN_WEIGHTS: Array<{ level: Level; w: number }> = [
